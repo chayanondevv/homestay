@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select, button, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+        .required {
+        color: red; /* กำหนดสีแดงให้ดอกจัน */
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Booking Input Form</h1>
+        <form id="bookingForm">
+            <!-- Customer Information -->
+            <label for="customerName">Customer Name<span class="required">*</span></label>
+            <input type="text" id="customerName" name="customerName" placeholder="Enter customer name" required>
+
+            <label for="customerPhone">Phone Number<span class="required">*</span></label>
+            <input type="text" id="customerPhone" name="customerPhone" placeholder="Enter customer phone number" required>
+
+            <label for="customerEmail">Email</label>
+            <input type="email" id="customerEmail" name="customerEmail" placeholder="Enter customer email" required>
+
+            <!-- Booking Details -->
+            <h2><u><strong>Room 1</strong></u></h2>
+            <label for="roomType1">Room Type <span class="required">*</span></label>
+            <select id="roomType1" name="roomType1" required>
+                <option value="Standard Room">บ้านเดี่ยว 1 ห้องนอน</option>
+                <option value="Superior Room">บ้านเดี่ยว 1 ห้องนอน 1 ห้องรับแขก</option>
+            </select>
+            <label for="extraBed1">Extra Bed</label>
+            <input type="number" id="extraBed1" name="extraBed1" required>
+
+            <label for="checkInDate1">Check-in Date<span class="required">*</span></label>
+            <input type="date" id="checkInDate1" name="checkInDate1" required onchange= "onchangeDate('checkInDate1','checkOutDate1','nights1')"> 
+
+            <label for="checkOutDate1">Check-out Date<span class="required">*</span></label>
+            <input type="date" id="checkOutDate1" name="checkOutDate1" required onchange= "onchangeDate('checkInDate1','checkOutDate1','nights1')">
+
+            <h2><u><strong>Room 2</strong></u></h2>
+            <label for="roomType2">Room Type </label>
+            <select id="roomType2" name="roomType2" required>
+                <option value=""></option>
+                <option value="Standard Room">บ้านเดี่ยว 1 ห้องนอน</option>
+                <option value="Superior Room">บ้านเดี่ยว 1 ห้องนอน 1 ห้องรับแขก</option>
+            </select>
+            <label for="extraBed2">Extra Bed</label>
+            <input type="number" id="extraBed2" name="extraBed2" required>
+
+            <label for="checkInDate2">Check-in Date<span class="required">*</span></label>
+            <input type="date" id="checkInDate2" name="checkInDate2" required onchange="onchangeDate('checkInDate2','checkOutDate2','nights2')"> 
+
+            <label for="checkOutDate2">Check-out Date<span class="required">*</span></label>
+            <input type="date" id="checkOutDate2" name="checkOutDate2" required onchange="onchangeDate('checkInDate2','checkOutDate2','nights2')"> 
+
+            <label for="deposit">Deposit (THB)</label>
+            <input type="number" id="deposit" name="deposit" required>
+
+            <label for="paymentOption">Payment Info</label>
+            <select id="paymentOption" name="paymentOption" required>
+                <option value="โอนมัดจำ">โอนมัดจำ</option>
+                <option value="ชำระเต็มจำนวน">ชำระเต็มจำนวน</option>
+            </select>
+
+            <button type="button" onclick="submitBooking()">Generate Receipt</button>
+        </form>
+    </div>
+
+    <script src="BookingInput.js"></script>

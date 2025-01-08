@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Report</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="BookingReport.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <nav>
+          <div class="logo">
+            <img src="img\logohome2.png" class="logo"/>
+          </div>
+          <p><strong>ใบจองที่พัก</strong></p>
+          <ul>
+            <li>หน้า 1 / 2</li>
+          </ul>
+        </nav>
+        <div class="homestayDetail">
+          <p>
+            <strong>เบอร์โทร : </strong
+            >081-706-2584&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              ><strong>Check-In : </strong>ตั้งแต่ 14:00 น. เป็นต้นไป</span
+            >
+          </p>
+          <p>
+            <strong>อีเมล์ : </strong
+            >fangbansuan@outlook.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+              ><strong>Check-Out : </strong> ก่อน 12:00 น.</span
+            >
+          </p>
+          <p><strong>Facebook : </strong>ฝางบ้านสวนพอเพียง</p>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="headerBookDetail">
+        <p><u>รายละเอียดการจอง</u></p>
+        <p>จองโดย : <span id="bookingBy"><strong></strong></span></p>
+        <p>เบอร์โทร : <span id="bookingTel"><strong></strong></p>
+        <p>การชำระเงิน : <span id="bookingPayment"><strong></strong></p>
+      </div>
+      <div class="itemBookingDetail">
+        <table>
+          <thead>
+            <tr>
+              <th>ประเภทห้องพัก</th>
+              <th>เตียงเสริม</th>
+              <th>วันเช็คอิน</th>
+              <th>วันเช็คเอาท์</th>
+              <th>จำนวนคืน</th>
+              <th>ราคา (บาท)</th>
+            </tr>
+          </thead>
+          <tbody id="booking-items">
+            <!-- Dynamic rows will be added here -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" style="text-align: right">
+                <strong>ราคารวม</strong>
+              </td>
+              <td id="total-price" style="text-align: right"></td>
+            </tr>
+            <tr>
+                <td colspan="5" style="text-align: right">
+                  <strong>มัดจำ</strong>
+                </td>
+                <td id="deposit" style="text-align: right"></td>
+              </tr>
+              <tr>
+                <td colspan="5" style="text-align: right">
+                  <strong>ค้างชำระ</strong>
+                </td>
+                <td id="overdue" style="text-align: right"></td>
+              </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+    <div class="page-break">
+        <nav>
+        <div></div>
+          <ul>
+            <li>หน้า 2 / 2</li>
+          </ul>
+        </nav>
+        <p><strong><u>นโยบายการเข้าที่พัก</u></strong></p>
+        <br>
+        <p><strong>นโยบายทั่วไป</strong></p>
+        <p>1. ไม่อนุญาตให้นำสัตว์เลี้ยงทุกชนิดเข้ามาภายในที่พัก</p>
+        <p>2. ไม่อนุญาตให้สูบบุหรี่ภายในห้องพัก</p>
+        <p>3. ไม่อนุญาตให้เล่นการพนัน หรือนำสิ่งผิดกฎหมายทุกชนิด เข้ามาภายในบริเวณที่พัก</p>
+        <p>4. ไม่อนุญาตให้ส่งเสียงดังหรือทำสิ่งที่เป็นการรบกวนผู้อื่น และขอสงวนสิทธิ์งดใช้เสียง ตั้งแต่เวลา 22.00 น. เป็นต้นไป</p>
+        <p>5. ในกรณีที่ทรัพย์สินของทางที่พักเสียหายหรือสูญหาย ต้องชดเชยค่าเสียหายตามราคาทรัพย์สินนั้นๆ</p>
+        <br>
+        <p><strong>นโยบายการเช็คอิน / เช็คเอาท์</strong></p>
+        <p>1. เช็คอินได้ตั้งแต่ 14.00 น. เป็นต้นไป</p>
+        <p>2. ผู้เข้าพักจะต้องมีอายุ 18 ปีขึ้นไป โปรดแสดงบัตรประชาชน ใบขับขี่ หรือ หนังสือเดินทางตัวจริง เพื่อแสดงตนเมื่อลงทะเบียนเข้าพัก</p>
+        <p>3. โปรดชำระเงินมัดจำความเสียหายมูลค่า 500 บาท/ห้อง และรับเงินมัดจำคืนกับพนักงานต้อนรับ เมื่อแจ้งคืนห้องพักพร้อมกุญแจห้องพัก</p>
+        <p>4. สามารถเช็คเอาท์ได้ไม่เกิน 12.00 น.</p>
+      </div>
+  </body>
+  <footer>
+    <button onclick="printPage()">พิมพ์เอกสาร</button>
+  </footer>
+</html>
